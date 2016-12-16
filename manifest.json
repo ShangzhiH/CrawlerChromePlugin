@@ -1,0 +1,27 @@
+{
+  "name": "Bigbit Plugin Crawler",
+  "version": "1.0",
+  "manifest_version": 2,
+  "description": "",
+  "options_page": "options.html",
+  "browser_action": {
+    "default_icon": "play.png"
+  },
+  "permissions": [
+	"webNavigation",
+	"tabs",
+	"contextMenus",
+  "storage",
+  "http://116.228.187.164:8090/*",
+  "alarms"
+  ],
+  "background": {
+    "scripts": ["eventPage.js","jquery-2.1.1.min.js"]
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://*/*","https://*/*"],
+      "js": ["jquery-2.1.1.min.js", "contentscript.js"]
+    }
+  ]
+}
